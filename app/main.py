@@ -76,7 +76,7 @@ def pagar_cuota(id_depto, fechaAPagar,fechaPago):
             respuesta_pago = {'numero_depto': detalle_depto[0],'fechaPago':fechaPago,'periodo_pagado':fechaAPagar,'estado_transaccion':estado_pago}
             return jsonify(respuesta_pago)
     except Exception as error:
-        return jsonify({'mensaje':'Error al realizar la transaccion'})
+        return jsonify({'mensaje':'No existen pagos para este departamento y fecha'})
 
 #GET para obtener listado de pagos pendientes
 @app.route('/pagos_pendientes/<mes>/<anio>')
